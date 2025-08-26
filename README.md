@@ -1,5 +1,5 @@
 # Simple-LWJGL-examples
-Simple examples using LWJGL bindings
+simple Examples using LWJGL bindings
 
 nOTE fOR pEOPLE uSING tHESE eXAMPLES:
 1. this Is not A professional Github repo... Not for 'Good github Repo structure Representation'
