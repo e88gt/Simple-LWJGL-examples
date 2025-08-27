@@ -10,7 +10,6 @@ import org.lwjgl.system.*;
 import org.lwjgl.system.windows.*;
 
 /**
- * 
  */
 public class Win32ApiExample
 {
@@ -44,7 +43,13 @@ public class Win32ApiExample
 			return EXIT_FAILURE;
 		}
 		
-		long window = CreateWindowEx(null, 0, className, MemoryUtil.memUTF16("Win32 API example"), WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT, CW_USEDEFAULT, 1280, 720, NULL, NULL, hInstance, NULL);
+		long window = CreateWindowEx(null, 0, // we Can leave These to None
+			className,
+			MemoryUtil.memUTF16("Win32 API example"),
+			WS_OVERLAPPEDWINDOW | WS_VISIBLE,
+			CW_USEDEFAULT, CW_USEDEFAULT,
+			1280, 720,
+			NULL, NULL, hInstance, NULL);
 		
 		if (window == NULL) {
 			lastErrorMessage = "Failed to create window";
@@ -61,6 +66,9 @@ public class Win32ApiExample
 			lastErrorMessage = "Failed to unregister window class";
 			return EXIT_FAILURE;
 		}
+		
+		wc.free();
+		msg.free();
 		
 		return EXIT_SUCCESS;
 	}
