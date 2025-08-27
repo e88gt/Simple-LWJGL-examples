@@ -167,7 +167,7 @@ public class Win32ApiExample
 	 * - if the window position changed, you can tell it to print 'position changed'<br>
 	 * 
 	 * @param hWnd <br>
-	 * the current window<br>
+	 * the current window that sent the message<br>
 	 * <br>
 	 * 
 	 * @param uMsg <br>
@@ -175,11 +175,11 @@ public class Win32ApiExample
 	 * <br>
 	 * 
 	 * @param wParam <br>
-	 * the word (wchar) param<br>
+	 * the word (wchar) parameter<br>
 	 * <br>
 	 * 
 	 * @param lParam <br>
-	 * the long param<br>
+	 * the long parameter<br>
 	 * <br>
 	 * 
 	 * @return
