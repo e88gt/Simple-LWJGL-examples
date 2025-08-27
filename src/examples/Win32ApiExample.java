@@ -10,13 +10,20 @@ import org.lwjgl.system.*;
 import org.lwjgl.system.windows.*;
 
 /**
+ * 
  */
 public class Win32ApiExample
 {
+	/* 
+	 * these are for error handling, you can leave these
+	 */
 	public static final int EXIT_SUCCESS = 0;
 	public static final int EXIT_FAILURE = 1;
 	private static String lastErrorMessage;
 	
+	/* 
+	 * typical java main method
+	 */
 	public static void main(String... args)
 	{
 		long hInstance = GetModuleHandle(null, (CharSequence) null);
@@ -28,6 +35,29 @@ public class Win32ApiExample
 		System.exit(exitCode);
 	}
 	
+	/**
+	 * the typical winmain function usually used for win32 api in c
+	 * 
+	 * @param hInstance <br>
+	 * you can pass in {@link WinBase#GetModuleHandle(IntBuffer, CharSequence)}<br>
+	 * <br>
+	 * 
+	 * @param hPrevInstance <br>
+	 * you can pass in {@link MemoryUtil#NULL}<br>
+	 * <br>
+	 * 
+	 * @param lpCmdLine <br>
+	 * you can pass in {@link MemoryUtil#NULL}<br>
+	 * <br>
+	 * 
+	 * @param nCmdShow <br>
+	 * you can pass in 0<br>
+	 * <br>
+	 * 
+	 * @return
+	 * {@value #EXIT_FAILURE} if the execution was failed
+	 * {@value #EXIT_SUCCESS} fi the execution was successful
+	 */
 	public static int WinMain(long hInstance, long hPrevInstance, long lpCmdLine, int nCmdShow)
 	{
 		ByteBuffer className = MemoryUtil.memUTF16("WinApiEx");
